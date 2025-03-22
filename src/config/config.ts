@@ -7,6 +7,11 @@ interface Config{
     mongooseConnection:string|undefined,
     env:string|undefined,
     redisConnection:string|undefined
+    nodemailer_host:string|undefined,
+    nodemailer_port:string|undefined,
+    nodemailer_user:string|undefined,
+    nodemailer_password:string|undefined
+
 }
 
 const _config:Config = {
@@ -14,6 +19,10 @@ const _config:Config = {
   mongooseConnection: process.env.MONGOOSE_CONNECTION,
   env: process.env.NODE_ENV,
   redisConnection: process.env.REDIS_CONNECTION,
+  nodemailer_host: process.env.NODEMAILER_HOST,
+  nodemailer_port: process.env.NODEMAILER_PORT,
+  nodemailer_user: process.env.NODEMAILER_USER,
+  nodemailer_password: process.env.NODEMAILER_PASSWORD,
 };
 
 export const config = {

@@ -1,13 +1,15 @@
 // src/email/emailConfig.ts
 import nodemailer from 'nodemailer';
+import { config } from '../config/config';
 
-export const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true, // true for 465, false for other ports
+
+export let transporter = nodemailer.createTransport({
+  host: config.get("nodemailer_host"),
+  port: parseInt(config.get("nodemailer_port"), 10),
+  secure: config.get("nodemailer_port") === "465", // true for port 465, false for others
   auth: {
-    user: 'pratham.patel@atomostech.com',
-    pass: 'kwmo jqza ekyu hezd',
+      user: config.get("nodemailer_user"),
+      pass: config.get("nodemailer_password"),
   },
 });
 
@@ -20,26 +22,9 @@ transporter.verify(function (error) {
   }
 
 // });
-// export const transporter = nodemailer.createTransport({
-//   host: config.get("nodemailer_host"),
-//   port: parseInt(config.get("nodemailer_port"), 10),
-//   secure: true, 
-//   auth: {
-//     user: String(config.get('nodemailer_user')),
-//     pass: String(config.get('nodemailer_password')),
-//   },
 
 
 });
 
-// export let transporter = nodemailer.createTransport({
-  // host: config.get("nodemailer_host"),
-  // port: parseInt(config.get("nodemailer_port"), 10),
-//   secure: config.get("nodemailer_port") === "465", // true for port 465, false for others
-//   auth: {
-//       user: config.get("nodemailer_user"),
-//       pass: config.get("nodemailer_password"),
-//   },
-// });
 
 // Verify connection configuration
