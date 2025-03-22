@@ -11,7 +11,7 @@ export const sendFormRequestEmail = async (req: Request, res: Response) => {
         // const { customer_name, customer_email } = req.body;
         const body = req.body;
         // const logFilePath = path.join(__dirname, 'request_log.json');
-        const customer_name:string = "demo"
+        const customer_name:string = "Customer"
         const customer_email:string = req.body["message"]["toolWithToolCallList"][0]["toolCall"]["function"]["arguments"]["email_address"]
         // fs.writeFileSync(logFilePath, JSON.stringify(req.body, null, 2), 'utf-8');
         // // console.log("Request body logged to file:", logFilePath); 
