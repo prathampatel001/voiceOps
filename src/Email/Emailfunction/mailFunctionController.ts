@@ -16,7 +16,7 @@ export const sendFormRequestEmail = async (req: Request, res: Response) => {
         const templateName = "Form-Request-Mail";
         const subject = "Action Required: Please Fill Out the Form";
         const email = customer_email;
-        const form_link = "http://localhost:3021/test";
+        const form_link = "https://voice-ops-psi.vercel.app/test";
 
         const variables = {
             template_content: {
