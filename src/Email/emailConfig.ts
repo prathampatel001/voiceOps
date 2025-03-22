@@ -4,7 +4,7 @@ import { config } from '../config/config';
 
 
 export let transporter = nodemailer.createTransport({
-  host: config.get("nodemailer_host"),
+  host: 'smtp.gmail.com',
   port: parseInt(config.get("nodemailer_port"), 10),
   secure: config.get("nodemailer_port") === "465", // true for port 465, false for others
   auth: {

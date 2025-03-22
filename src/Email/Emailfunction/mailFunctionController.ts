@@ -2,9 +2,6 @@
 import { saveEmailLog } from "../emailController";
 import { sendEmail } from "../emailService";
 import { Request, Response } from 'express';
-import fs from 'fs';
-import path from 'path';
-
 
 export const sendFormRequestEmail = async (req: Request, res: Response) => {
     try {
@@ -55,7 +52,7 @@ export const sendFormRequestEmail = async (req: Request, res: Response) => {
                 results: [
                     {
                         "toolCallId": toolCallId,
-                        "result": "Y"
+                        "result": "Email sent sucessfully"
                     }
                 ]
             }
