@@ -1,9 +1,13 @@
 import express from 'express';
-import { sendFormRequestEmail } from './mailFunctionController';
+import { sendCallSummaryEmail, sendCibilScoreEmail, sendFormRequestEmail } from './mailFunctionController';
 
 const router = express.Router();
 
 router.post('/send-form-request-email',sendFormRequestEmail)
+
+router.post('/send-cibil-score',sendCibilScoreEmail)
+
+router.post("/summary", sendCallSummaryEmail)
 
 
 export default router;

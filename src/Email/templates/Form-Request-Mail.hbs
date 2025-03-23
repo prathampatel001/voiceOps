@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Action Required: Fill Out Your Details</title>
+    <title>Your CIBIL Score & Loan Offer</title>
     <style>
         body {
-            font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+            font-family: "Poppins", Arial, sans-serif;
             font-size: 16px;
             margin: 0;
             padding: 0;
@@ -14,12 +14,10 @@
             color: #333;
             text-align: center;
         }
-
         .email-wrapper {
             width: 100%;
             padding: 40px 0;
         }
-
         .email-container {
             max-width: 600px;
             background: #ffffff;
@@ -29,41 +27,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
         .header {
             background: linear-gradient(135deg, #4c75fe, #1e50d8);
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px 12px 0 0;
-        }
-
-        .header h1 {
             color: #ffffff;
-            font-size: 22px;
-            margin: 0;
         }
-
-        .logo {
-            max-width: 120px;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin-top: 20px;
-        }
-
-        p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.8;
-            margin: 15px 0;
-        }
-
-        .button-container {
-            margin-top: 25px;
-        }
-
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, #4c75fe, #1e50d8);
@@ -73,78 +42,35 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 16px;
+            margin-top: 20px;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 4px 15px rgba(76, 117, 254, 0.4);
         }
-
         .btn:hover {
             background: linear-gradient(135deg, #3a5fcc, #163ea5);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 117, 254, 0.6);
         }
-
         .footer {
             font-size: 14px;
             color: #7d7d7d;
             margin-top: 30px;
-        }
-
-        .footer a {
-            color: #4c75fe;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .email-container {
-                padding: 20px;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            p {
-                font-size: 14px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="email-wrapper">
         <div class="email-container">
-            <!-- Header -->
             <div class="header">
-                <h1>Action Required</h1>
+                <h1>Your Loan Application</h1>
             </div>
-
-            <!-- Content -->
-            <h2>Complete Your Details</h2>
-            <p>Dear <strong>{{template_content.customer_name}}</strong>,</p>
-            <p>We have received your request. To proceed further, please fill out the form using the button below.</p>
-
-            <!-- Call to Action Button -->
-            <div class="button-container">
-                <a href="{{template_content.form_link}}" class="btn">Fill Out the Form</a>
+            <h2>Hello {{template_content.customer_name}},</h2>
+            <p>Your CIBIL score is: <strong>{{template_content.cibil_score}}</strong></p>
+            <p>Based on your score, you are eligible for a loan of ₹{{template_content.loan_amount}}.</p>
+            <p>Your credit rating: <strong>{{template_content.credit_rating}}</strong></p>
+            <a href="{{template_content.form_link}}" class="btn">Proceed with Application</a>
+            <div class="footer">
+                <p>Need help? Contact us at <a href="mailto:voiceopsacp@gmail.com">voiceopsacp@gmail.com</a></p>
             </div>
-
-            <p>We appreciate your cooperation and look forward to assisting you.</p>
-            <p>Best regards,<br><strong>Support Team</strong></p>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>Need help? Contact us at <a href="mailto:support@example.com">support@example.com</a>.</p>
         </div>
     </div>
 </body>
